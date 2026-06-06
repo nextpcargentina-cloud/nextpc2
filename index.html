@@ -8,15 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
 <style>
 
-:root{
-  --blue:#4da6ff;--blue-dark:#2475c7;
-  --bg:#070b11;--bg2:#0b1119;--bg3:#101823;
-  --card:#0d1625;--card-b:rgba(77,166,255,0.13);
-  --text:#dde8f5;--muted:#6a88a8;
-  --green:#00e676;--red:#ff4545;--orange:#ffab40;
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+:root{--blue:#4da6ff;--blue-dark:#2475c7;--bg:#070b11;--bg2:#0b1119;--bg3:#101823;--card:#0d1625;--card-b:rgba(77,166,255,0.13);--text:#dde8f5;--muted:#6a88a8;--green:#00e676;--red:#ff4545;--orange:#ffab40;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
 body{font-family:'Exo 2',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;}
 body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(77,166,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(77,166,255,0.03) 1px,transparent 1px);background-size:48px 48px;}
 header{position:sticky;top:0;z-index:1000;background:rgba(7,11,17,0.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--card-b);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:68px;gap:1rem;}
@@ -25,18 +18,16 @@ header{position:sticky;top:0;z-index:1000;background:rgba(7,11,17,0.95);backdrop
 .search-wrap:focus-within{border-color:var(--blue);box-shadow:0 0 0 2px rgba(77,166,255,0.1);}
 .search-wrap input{flex:1;background:transparent;border:none;outline:none;color:var(--text);padding:.55rem 1rem;font-family:inherit;font-size:.92rem;}
 .search-wrap input::placeholder{color:var(--muted);}
-.search-wrap button{background:var(--blue);border:none;cursor:pointer;padding:.55rem 1rem;color:#000;font-size:1rem;transition:background .2s;}
+.search-wrap button{background:var(--blue);border:none;cursor:pointer;padding:.55rem 1rem;color:#000;font-size:1rem;}
 .search-wrap button:hover{background:var(--blue-dark);}
 .update-label{font-size:.72rem;color:var(--muted);text-align:right;line-height:1.5;white-space:nowrap;}
-.hero{position:relative;padding:2.8rem 2rem 1.8rem;text-align:center;z-index:1;overflow:hidden;}
+.hero{position:relative;padding:2.8rem 2rem 1.8rem;text-align:center;z-index:1;}
 .hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(77,166,255,0.1) 0%,transparent 70%);}
 .hero h1{font-family:'Rajdhani',sans-serif;font-size:clamp(1.8rem,4vw,3.2rem);font-weight:700;letter-spacing:.05em;color:#fff;text-shadow:0 0 40px rgba(77,166,255,0.3);margin-bottom:.35rem;}
-.hero h1 em{color:var(--blue);font-style:normal;}
-.hero p{color:var(--muted);font-size:.9rem;}
+.hero h1 em{color:var(--blue);font-style:normal;}.hero p{color:var(--muted);font-size:.9rem;}
 .layout{display:flex;position:relative;z-index:1;min-height:calc(100vh - 68px);}
 .sidebar{width:200px;flex-shrink:0;background:var(--bg2);border-right:1px solid var(--card-b);padding:1rem 0;position:sticky;top:68px;height:calc(100vh - 68px);overflow-y:auto;}
-.sidebar::-webkit-scrollbar{width:3px;}
-.sidebar::-webkit-scrollbar-thumb{background:var(--card-b);}
+.sidebar::-webkit-scrollbar{width:3px;}.sidebar::-webkit-scrollbar-thumb{background:var(--card-b);}
 .sidebar-title{font-family:'Rajdhani',sans-serif;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);padding:.5rem 1rem .3rem;}
 .cat-btn{display:block;width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:.45rem 1rem;font-family:'Exo 2',sans-serif;font-size:.83rem;color:var(--muted);border-left:3px solid transparent;transition:all .15s;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .cat-btn:hover{color:var(--text);background:rgba(77,166,255,0.05);}
@@ -63,9 +54,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(7,11,17,0.95);backdrop
 .price-final{font-family:'Rajdhani',sans-serif;font-size:1.5rem;font-weight:700;color:#fff;line-height:1.1;}
 .price-final span{font-size:.88rem;color:var(--blue);font-weight:600;}
 .sbadge{display:inline-flex;align-items:center;gap:.25rem;font-size:.7rem;font-weight:600;padding:.18rem .5rem;border-radius:4px;width:fit-content;margin-top:.45rem;}
-.s-in{background:rgba(0,230,118,.11);color:var(--green);}
-.s-low{background:rgba(255,171,64,.11);color:var(--orange);}
-.s-out{background:rgba(255,69,69,.09);color:var(--red);}
+.s-in{background:rgba(0,230,118,.11);color:var(--green);}.s-low{background:rgba(255,171,64,.11);color:var(--orange);}.s-out{background:rgba(255,69,69,.09);color:var(--red);}
 .loading{grid-column:1/-1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:55vh;gap:1.2rem;}
 .spinner{width:44px;height:44px;border:3px solid rgba(77,166,255,0.15);border-top-color:var(--blue);border-radius:50%;animation:spin .85s linear infinite;}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -75,6 +64,7 @@ header{position:sticky;top:0;z-index:1000;background:rgba(7,11,17,0.95);backdrop
 .err-box p{color:var(--muted);font-size:.86rem;line-height:1.6;}
 .btn-retry{margin-top:1.2rem;background:var(--blue);border:none;color:#000;padding:.55rem 1.6rem;border-radius:7px;cursor:pointer;font-family:inherit;font-weight:700;font-size:.9rem;}
 .empty{grid-column:1/-1;text-align:center;padding:4rem;color:var(--muted);}
+.dots{color:var(--muted);padding:0 .3rem;}
 .pag{display:flex;justify-content:center;gap:.4rem;margin-top:1.8rem;flex-wrap:wrap;}
 .pbtn{background:var(--bg3);border:1px solid var(--card-b);color:var(--text);padding:.38rem .72rem;border-radius:6px;cursor:pointer;font-family:inherit;font-size:.82rem;transition:all .15s;min-width:36px;text-align:center;}
 .pbtn:hover{border-color:var(--blue);color:var(--blue);}
@@ -129,26 +119,15 @@ footer strong{color:var(--blue);}
 <footer>
   <strong>NEXT PC</strong> &mdash; Componentes y Tecnolog&#237;a &bull; <span id="fyear"></span>
 </footer>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <script>
 
-var NB_TOKEN  = '2d1945bf4fe8628da36c74fb426b9059';
-var USD_RATE  = 1450;
-var MARGIN    = 0.10;
+var API_URL  = '/api/productos';
+var USD_RATE = 1450;
+var MARGIN   = 0.10;
 var PAGE_SIZE = 48;
-var CACHE_KEY = 'npc4_data';
-var CACHE_TS  = 'npc4_ts';
+var CACHE_KEY = 'npc5_data';
+var CACHE_TS  = 'npc5_ts';
 var CACHE_HRS = 12;
-
-var CSV_DIRECT  = 'https://api.nb.com.ar/v1/priceListCsv/'   + NB_TOKEN;
-var XLSX_DIRECT = 'https://api.nb.com.ar/v1/priceListExcel/' + NB_TOKEN;
-var SOURCES = [
-  { url: 'https://corsproxy.io/?' + encodeURIComponent(CSV_DIRECT),  type: 'csv'  },
-  { url: 'https://api.allorigins.win/raw?url=' + encodeURIComponent(CSV_DIRECT), type: 'csv' },
-  { url: 'https://corsproxy.io/?' + encodeURIComponent(XLSX_DIRECT), type: 'xlsx' },
-  { url: CSV_DIRECT,  type: 'csv'  },
-  { url: XLSX_DIRECT, type: 'xlsx' }
-];
 
 var S = { all:[], filtered:[], cats:[], cat:'all', q:'', sort:'', stockOnly:false, page:1 };
 
@@ -160,255 +139,187 @@ function fARS(n){ return '$ ' + n.toLocaleString('es-AR'); }
 function parseCSV(text){
   var lines = text.split('\n').filter(function(l){ return l.trim().length > 0; });
   if(lines.length < 2) return [];
-  var firstLine = lines[0];
-  var countSemi = (firstLine.match(/;/g)||[]).length;
-  var countComma = (firstLine.match(/,/g)||[]).length;
-  var delim = countSemi > countComma ? ';' : ',';
+  var first = lines[0];
+  var delim = (first.match(/;/g)||[]).length > (first.match(/,/g)||[]).length ? ';' : ',';
 
   function splitRow(row){
-    var res = [], cur = '', inQ = false;
-    for(var i = 0; i < row.length; i++){
-      var c = row[i];
-      if(c === '"'){ inQ = !inQ; continue; }
-      if(c === delim && !inQ){ res.push(cur.trim()); cur = ''; }
-      else cur += c;
+    var res=[], cur='', inQ=false;
+    for(var i=0; i<row.length; i++){
+      var c=row[i];
+      if(c==='"'){ inQ=!inQ; continue; }
+      if(c===delim && !inQ){ res.push(cur.trim()); cur=''; }
+      else cur+=c;
     }
     res.push(cur.trim());
     return res;
   }
 
   var H = splitRow(lines[0]).map(function(h){ return h.replace(/"/g,'').trim().toUpperCase(); });
-  console.log('CSV headers:', H.slice(0,12));
+  console.log('Headers:', H.slice(0,12));
 
   var col = {};
-  H.forEach(function(h, i){
-    if((h.indexOf('PRECIO') !== -1 || h.indexOf('PRICE') !== -1) && h.indexOf('USUARIO') === -1 && col.p === undefined) col.p = i;
-    if((h.indexOf('DESCRIP') !== -1 || h.indexOf('NOMBRE') !== -1 || h.indexOf('NAME') !== -1) && col.n === undefined) col.n = i;
-    if((h.indexOf('SKU') !== -1 || h.indexOf('CODIGO') !== -1) && col.s === undefined) col.s = i;
-    if((h.indexOf('MARCA') !== -1 || h.indexOf('BRAND') !== -1) && col.b === undefined) col.b = i;
-    if(h.indexOf('CATEG') !== -1 && h.indexOf('USUARIO') === -1 && col.c === undefined) col.c = i;
-    if(h.indexOf('STOCK') !== -1 && col.st === undefined) col.st = i;
-    if((h.indexOf('IMAGEN') !== -1 || h.indexOf('IMG') !== -1 || h.indexOf('FOTO') !== -1) && col.img === undefined) col.img = i;
+  H.forEach(function(h,i){
+    if((h.indexOf('PRECIO')!==-1||h.indexOf('PRICE')!==-1) && h.indexOf('USUARIO')===-1 && col.p===undefined) col.p=i;
+    if((h.indexOf('DESCRIP')!==-1||h.indexOf('NOMBRE')!==-1||h.indexOf('NAME')!==-1) && col.n===undefined) col.n=i;
+    if((h.indexOf('SKU')!==-1||h.indexOf('CODIGO')!==-1) && col.s===undefined) col.s=i;
+    if((h.indexOf('MARCA')!==-1||h.indexOf('BRAND')!==-1) && col.b===undefined) col.b=i;
+    if(h.indexOf('CATEG')!==-1 && h.indexOf('USUARIO')===-1 && col.c===undefined) col.c=i;
+    if(h.indexOf('STOCK')!==-1 && col.st===undefined) col.st=i;
+    if((h.indexOf('IMAGEN')!==-1||h.indexOf('IMG')!==-1||h.indexOf('FOTO')!==-1) && col.img===undefined) col.img=i;
   });
-  console.log('col map:', JSON.stringify(col));
+  console.log('ColMap:', JSON.stringify(col));
 
   var out = [];
-  for(var i = 1; i < lines.length; i++){
+  for(var i=1; i<lines.length; i++){
     var r = splitRow(lines[i]);
     if(r.length < 3) continue;
-    var raw = col.p !== undefined ? String(r[col.p]||'0') : '0';
+    var raw = (col.p!==undefined) ? String(r[col.p]||'0') : '0';
     raw = raw.replace(/[^0-9.,]/g,'').replace(',','.');
     var arsNB = parseFloat(raw);
-    var name = col.n !== undefined ? String(r[col.n]||'').replace(/"/g,'').trim() : '';
-    if(!name || !arsNB || isNaN(arsNB) || arsNB <= 0) continue;
+    var name = (col.n!==undefined) ? String(r[col.n]||'').replace(/"/g,'').trim() : '';
+    if(!name || !arsNB || isNaN(arsNB) || arsNB<=0) continue;
     out.push({
-      sku:   col.s   !== undefined ? String(r[col.s]  ||'').trim() : '',
+      sku:   (col.s!==undefined)   ? String(r[col.s]||'').trim()  : '',
       name:  name,
-      brand: col.b   !== undefined ? String(r[col.b]  ||'').trim() : '',
-      cat:  (col.c   !== undefined ? String(r[col.c]  ||'').trim() : '') || 'General',
+      brand: (col.b!==undefined)   ? String(r[col.b]||'').trim()  : '',
+      cat:   ((col.c!==undefined)  ? String(r[col.c]||'').trim()  : '') || 'General',
       precio: calcPrecio(arsNB),
-      stock: col.st  !== undefined ? (parseInt(String(r[col.st]||'0').replace(/[^0-9]/g,''))||0) : 0,
-      img:   col.img !== undefined ? String(r[col.img]||'').trim() : ''
+      stock: (col.st!==undefined)  ? (parseInt(String(r[col.st]||'0').replace(/[^0-9]/g,''))||0) : 0,
+      img:   (col.img!==undefined) ? String(r[col.img]||'').trim() : ''
     });
   }
-  console.log('CSV parsed:', out.length, 'products');
+  console.log('Parsed:', out.length, 'products');
   return out;
 }
 
-function parseXLSX(buf){
-  var wb = XLSX.read(buf, {type:'array'});
-  var ws = wb.Sheets[wb.SheetNames[0]];
-  var rows = XLSX.utils.sheet_to_json(ws, {header:1, raw:true});
-  var hi = -1, H = [];
-  for(var i = 0; i < Math.min(20, rows.length); i++){
-    var r = rows[i]; if(!r || !r.length) continue;
-    var s = r.map(function(c){ return String(c||''); }).join('|').toUpperCase();
-    if(s.indexOf('PRECIO') !== -1 || s.indexOf('DESCRIP') !== -1 || s.indexOf('SKU') !== -1){
-      hi = i;
-      H = r.map(function(c){ return String(c||'').toUpperCase().trim(); });
-      break;
-    }
-  }
-  if(hi === -1){ hi = 0; H = (rows[0]||[]).map(function(c){ return String(c||'').toUpperCase().trim(); }); }
-  console.log('XLSX headers at row', hi, ':', H.slice(0,12));
-
-  var col = {};
-  H.forEach(function(h, i){
-    if((h.indexOf('PRECIO') !== -1 || h.indexOf('PRICE') !== -1) && h.indexOf('USUARIO') === -1 && col.p === undefined) col.p = i;
-    if((h.indexOf('DESCRIP') !== -1 || h.indexOf('NOMBRE') !== -1) && col.n === undefined) col.n = i;
-    if((h.indexOf('SKU') !== -1 || h.indexOf('CODIGO') !== -1) && col.s === undefined) col.s = i;
-    if((h.indexOf('MARCA') !== -1 || h.indexOf('BRAND') !== -1) && col.b === undefined) col.b = i;
-    if(h.indexOf('CATEG') !== -1 && h.indexOf('USUARIO') === -1 && col.c === undefined) col.c = i;
-    if(h.indexOf('STOCK') !== -1 && col.st === undefined) col.st = i;
-    if((h.indexOf('IMAGEN') !== -1 || h.indexOf('IMG') !== -1) && col.img === undefined) col.img = i;
-  });
-  console.log('col map:', JSON.stringify(col));
-
-  var out = [];
-  for(var i = hi + 1; i < rows.length; i++){
-    var r = rows[i]; if(!r || r.length < 3) continue;
-    var raw = col.p !== undefined ? String(r[col.p]||'0') : '0';
-    raw = raw.replace(/[^0-9.,]/g,'').replace(',','.');
-    var arsNB = parseFloat(raw);
-    var name = col.n !== undefined ? String(r[col.n]||'').trim() : '';
-    if(!name || !arsNB || isNaN(arsNB) || arsNB <= 0) continue;
-    out.push({
-      sku:   col.s   !== undefined ? String(r[col.s]  ||'').trim() : '',
-      name:  name,
-      brand: col.b   !== undefined ? String(r[col.b]  ||'').trim() : '',
-      cat:  (col.c   !== undefined ? String(r[col.c]  ||'').trim() : '') || 'General',
-      precio: calcPrecio(arsNB),
-      stock: col.st  !== undefined ? (parseInt(String(r[col.st]||'0').replace(/[^0-9]/g,''))||0) : 0,
-      img:   col.img !== undefined ? String(r[col.img]||'').trim() : ''
-    });
-  }
-  console.log('XLSX parsed:', out.length, 'products');
-  return out;
-}
-
-function saveCache(products){
-  try{ localStorage.setItem(CACHE_KEY, JSON.stringify(products)); localStorage.setItem(CACHE_TS, String(Date.now())); }catch(e){}
+function saveCache(p){
+  try{ localStorage.setItem(CACHE_KEY,JSON.stringify(p)); localStorage.setItem(CACHE_TS,String(Date.now())); }catch(e){}
 }
 function loadCache(){
-  try{ var c = localStorage.getItem(CACHE_KEY); return c ? JSON.parse(c) : null; }catch(e){ return null; }
+  try{ var c=localStorage.getItem(CACHE_KEY); return c?JSON.parse(c):null; }catch(e){ return null; }
 }
 
 function fetchData(force){
   if(!force){
     try{
-      var c = localStorage.getItem(CACHE_KEY), t = localStorage.getItem(CACHE_TS);
-      if(c && t && (Date.now() - Number(t)) / 3600000 < CACHE_HRS){ return Promise.resolve(JSON.parse(c)); }
+      var c=localStorage.getItem(CACHE_KEY), t=localStorage.getItem(CACHE_TS);
+      if(c && t && (Date.now()-Number(t))/3600000 < CACHE_HRS) return Promise.resolve(JSON.parse(c));
     }catch(e){}
   }
-  var idx = 0;
-  function tryNext(){
-    if(idx >= SOURCES.length){
-      var cached = loadCache();
-      return Promise.resolve(cached);
-    }
-    var src = SOURCES[idx++];
-    console.log('Trying [' + idx + '/' + SOURCES.length + ']:', src.url.slice(0,70));
-    return fetch(src.url)
-      .then(function(res){
-        if(!res.ok) throw new Error('HTTP ' + res.status);
-        if(src.type === 'xlsx'){
-          return res.arrayBuffer().then(function(buf){
-            var p = parseXLSX(buf);
-            if(p.length > 0){ saveCache(p); return p; }
-            throw new Error('0 products from XLSX');
-          });
-        }
-        return res.text().then(function(txt){
-          if(!txt || txt.trim().charAt(0) === '<') throw new Error('Got HTML instead of CSV');
-          var p = parseCSV(txt);
-          if(p.length > 0){ saveCache(p); return p; }
-          throw new Error('0 products from CSV');
-        });
-      })
-      .catch(function(e){ console.warn('Source ' + idx + ' failed:', e.message); return tryNext(); });
-  }
-  return tryNext();
+  return fetch(API_URL)
+    .then(function(res){
+      if(!res.ok) throw new Error('HTTP '+res.status);
+      return res.text();
+    })
+    .then(function(txt){
+      if(!txt || txt.trim().charAt(0)==='<') throw new Error('Respuesta invalida');
+      var p = parseCSV(txt);
+      if(!p.length) throw new Error('Sin productos');
+      saveCache(p);
+      return p;
+    })
+    .catch(function(err){
+      console.error('Fetch error:', err.message);
+      return loadCache();
+    });
 }
 
 function renderCats(){
   var el = document.getElementById('catList');
   var cats = ['Todas'].concat(S.cats);
   var html = '';
-  for(var i = 0; i < cats.length; i++){
-    var c = cats[i], v = c === 'Todas' ? 'all' : c;
+  for(var i=0; i<cats.length; i++){
+    var c=cats[i], v=c==='Todas'?'all':c;
     var safe = v.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-    html += '<button class="cat-btn' + (S.cat === v ? ' active' : '') + '" onclick="setCat(\'' + safe + '\')">' + c + '</button>';
+    html += '<button class="cat-btn'+(S.cat===v?' active':'')+'" onclick="setCat(\''+safe+'\')">'+c+'</button>';
   }
   el.innerHTML = html;
 }
 
-function renderGrid(){
-  var grid = document.getElementById('grid'), pag = document.getElementById('pag');
-  var total = S.filtered.length, pages = Math.ceil(total / PAGE_SIZE);
-  var items = S.filtered.slice((S.page-1)*PAGE_SIZE, S.page*PAGE_SIZE);
-  document.getElementById('resultCount').textContent = total + ' producto' + (total !== 1 ? 's' : '');
-  if(!items.length){ grid.innerHTML = '<div class="empty"><p>Sin resultados</p></div>'; pag.innerHTML = ''; return; }
-  var html = '';
-  for(var i = 0; i < items.length; i++){
-    var p = items[i];
-    var badge = p.stock > 5 ? '<span class="sbadge s-in">&#10003; En stock</span>'
-      : p.stock > 0 ? '<span class="sbadge s-low">&#9889; &#218;lt. ' + p.stock + ' u.</span>'
+function cardHTML(p){
+  var badge = p.stock>5
+    ? '<span class="sbadge s-in">&#10003; En stock</span>'
+    : p.stock>0
+      ? '<span class="sbadge s-low">&#9889; &#218;lt. '+p.stock+' u.</span>'
       : '<span class="sbadge s-out">&#10005; Sin stock</span>';
-    var imgH = p.img
-      ? '<img src="' + p.img + '" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=\\\'card-img-ph\\\'>&#128230;</div>\'">'
-      : '<div class="card-img-ph">&#128230;</div>';
-    html += '<div class="card">'
-      + '<div class="card-img-wrap">' + imgH + '</div>'
-      + (p.brand ? '<div class="card-brand">' + p.brand + '</div>' : '')
-      + '<div class="card-name">' + p.name + '</div>'
-      + (p.sku ? '<div class="card-sku">SKU: ' + p.sku + '</div>' : '')
-      + '<div class="price-final"><span>ARS</span> ' + fARS(p.precio) + '</div>'
-      + badge + '</div>';
-  }
-  grid.innerHTML = html;
-  if(pages <= 1){ pag.innerHTML = ''; return; }
-  var b = '<button class="pbtn" onclick="goPage(' + (S.page-1) + ')" ' + (S.page===1?'disabled':'') + '>&#8592;</button>';
-  var f = Math.max(1, S.page-2), t = Math.min(pages, f+4); f = Math.max(1, t-4);
-  if(f > 1) b += '<button class="pbtn" onclick="goPage(1)">1</button>' + (f>2?'<span style="padding:0 .3rem;color:var(--muted)">&#8230;</span>':'');
-  for(var i = f; i <= t; i++) b += '<button class="pbtn' + (i===S.page?' active':'') + '" onclick="goPage(' + i + ')">' + i + '</button>';
-  if(t < pages) b += (t<pages-1?'<span style="padding:0 .3rem;color:var(--muted)">&#8230;</span>':'') + '<button class="pbtn" onclick="goPage(' + pages + ')">' + pages + '</button>';
-  b += '<button class="pbtn" onclick="goPage(' + (S.page+1) + ')" ' + (S.page===pages?'disabled':'') + '>&#8594;</button>';
+  var imgH = p.img
+    ? '<img src="'+p.img+'" loading="lazy" onerror="this.parentElement.innerHTML=\'<div class=\\\'card-img-ph\\\'>&#128230;</div>\'">'
+    : '<div class="card-img-ph">&#128230;</div>';
+  return '<div class="card">'
+    +'<div class="card-img-wrap">'+imgH+'</div>'
+    +(p.brand?'<div class="card-brand">'+p.brand+'</div>':'')
+    +'<div class="card-name">'+p.name+'</div>'
+    +(p.sku?'<div class="card-sku">SKU: '+p.sku+'</div>':'')
+    +'<div class="price-final"><span>ARS</span> '+fARS(p.precio)+'</div>'
+    +badge+'</div>';
+}
+
+function renderGrid(){
+  var grid=document.getElementById('grid'), pag=document.getElementById('pag');
+  var total=S.filtered.length, pages=Math.ceil(total/PAGE_SIZE);
+  var items=S.filtered.slice((S.page-1)*PAGE_SIZE, S.page*PAGE_SIZE);
+  document.getElementById('resultCount').textContent = total+' producto'+(total!==1?'s':'');
+  if(!items.length){ grid.innerHTML='<div class="empty"><p>Sin resultados</p></div>'; pag.innerHTML=''; return; }
+  var h=''; for(var i=0;i<items.length;i++) h+=cardHTML(items[i]);
+  grid.innerHTML = h;
+  if(pages<=1){ pag.innerHTML=''; return; }
+  var b='<button class="pbtn" onclick="goPage('+(S.page-1)+')" '+(S.page===1?'disabled':'')+'>&#8592;</button>';
+  var f=Math.max(1,S.page-2), t=Math.min(pages,f+4); f=Math.max(1,t-4);
+  if(f>1) b+='<button class="pbtn" onclick="goPage(1)">1</button>'+(f>2?'<span class="dots">&#8230;</span>':'');
+  for(var i=f;i<=t;i++) b+='<button class="pbtn'+(i===S.page?' active':'')+'" onclick="goPage('+i+')">'+i+'</button>';
+  if(t<pages) b+=(t<pages-1?'<span class="dots">&#8230;</span>':'')+'<button class="pbtn" onclick="goPage('+pages+')">'+pages+'</button>';
+  b+='<button class="pbtn" onclick="goPage('+(S.page+1)+')" '+(S.page===pages?'disabled':'')+'>&#8594;</button>';
   pag.innerHTML = b;
 }
 
 function applyFilters(){
-  S.sort = document.getElementById('sortSel').value;
-  S.stockOnly = document.getElementById('stockOnly').checked;
-  S.page = 1;
-  var f = S.all.slice();
-  if(S.cat !== 'all') f = f.filter(function(p){ return p.cat === S.cat; });
+  S.sort=document.getElementById('sortSel').value;
+  S.stockOnly=document.getElementById('stockOnly').checked;
+  S.page=1;
+  var f=S.all.slice();
+  if(S.cat!=='all') f=f.filter(function(p){ return p.cat===S.cat; });
   if(S.q){
-    var q = S.q.toLowerCase();
-    f = f.filter(function(p){
-      return p.name.toLowerCase().indexOf(q) !== -1
-        || p.brand.toLowerCase().indexOf(q) !== -1
-        || p.sku.toLowerCase().indexOf(q) !== -1;
+    var q=S.q.toLowerCase();
+    f=f.filter(function(p){
+      return p.name.toLowerCase().indexOf(q)!==-1
+        || p.brand.toLowerCase().indexOf(q)!==-1
+        || p.sku.toLowerCase().indexOf(q)!==-1;
     });
   }
-  if(S.stockOnly) f = f.filter(function(p){ return p.stock > 0; });
-  if(S.sort === 'pa') f.sort(function(a,b){ return a.precio - b.precio; });
-  else if(S.sort === 'pd') f.sort(function(a,b){ return b.precio - a.precio; });
-  else if(S.sort === 'na') f.sort(function(a,b){ return a.name.localeCompare(b.name); });
-  S.filtered = f;
+  if(S.stockOnly) f=f.filter(function(p){ return p.stock>0; });
+  if(S.sort==='pa') f.sort(function(a,b){ return a.precio-b.precio; });
+  else if(S.sort==='pd') f.sort(function(a,b){ return b.precio-a.precio; });
+  else if(S.sort==='na') f.sort(function(a,b){ return a.name.localeCompare(b.name); });
+  S.filtered=f;
   renderGrid();
 }
 
-function setCat(v){ S.cat = v; S.page = 1; renderCats(); applyFilters(); }
-function goPage(n){
-  var p = Math.ceil(S.filtered.length / PAGE_SIZE);
-  if(n < 1 || n > p) return;
-  S.page = n; renderGrid(); window.scrollTo({top:0, behavior:'smooth'});
-}
-function applySearch(){ S.q = document.getElementById('searchInput').value.trim(); S.page = 1; applyFilters(); }
+function setCat(v){ S.cat=v; S.page=1; renderCats(); applyFilters(); }
+function goPage(n){ var p=Math.ceil(S.filtered.length/PAGE_SIZE); if(n<1||n>p)return; S.page=n; renderGrid(); window.scrollTo({top:0,behavior:'smooth'}); }
+function applySearch(){ S.q=document.getElementById('searchInput').value.trim(); S.page=1; applyFilters(); }
 
 function init(){
-  document.getElementById('fyear').textContent = new Date().getFullYear();
-  document.getElementById('grid').innerHTML = '<div class="loading"><div class="spinner"></div><p>Cargando cat\u00e1logo...</p></div>';
+  document.getElementById('fyear').textContent=new Date().getFullYear();
+  document.getElementById('grid').innerHTML='<div class="loading"><div class="spinner"></div><p>Cargando cat\u00e1logo...</p></div>';
   fetchData(false).then(function(products){
-    if(!products || !products.length){
-      document.getElementById('grid').innerHTML = '<div class="err-box"><h3>No se pudo cargar</h3><p>Verific\u00e1 tu conexi\u00f3n e intent\u00e1 de nuevo.</p><button class="btn-retry" onclick="init()">Reintentar</button></div>';
-      document.getElementById('updateLabel').textContent = 'Error al cargar';
+    if(!products||!products.length){
+      document.getElementById('grid').innerHTML='<div class="err-box"><h3>No se pudo cargar</h3><p>Verific\u00e1 tu conexi\u00f3n e intent\u00e1 de nuevo.</p><button class="btn-retry" onclick="init()">Reintentar</button></div>';
+      document.getElementById('updateLabel').textContent='Error al cargar';
       return;
     }
-    S.all = products;
-    var catSet = {};
-    products.forEach(function(p){ if(p.cat) catSet[p.cat] = true; });
-    S.cats = Object.keys(catSet).sort();
-    S.filtered = products.slice();
+    S.all=products;
+    var cs={}; products.forEach(function(p){ if(p.cat) cs[p.cat]=true; });
+    S.cats=Object.keys(cs).sort();
+    S.filtered=products.slice();
     renderCats(); applyFilters();
-    var now = new Date();
-    document.getElementById('updateLabel').innerHTML = 'Actualizado<br>' + now.toLocaleDateString('es-AR') + ' ' + now.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'});
+    var now=new Date();
+    document.getElementById('updateLabel').innerHTML='Actualizado<br>'+now.toLocaleDateString('es-AR')+' '+now.toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'});
     setTimeout(function(){
       fetchData(true).then(function(p){
-        if(p && p.length){
-          S.all = p;
-          var cs = {}; p.forEach(function(x){ if(x.cat) cs[x.cat]=true; });
-          S.cats = Object.keys(cs).sort();
+        if(p&&p.length){
+          S.all=p;
+          var cs={}; p.forEach(function(x){ if(x.cat) cs[x.cat]=true; });
+          S.cats=Object.keys(cs).sort();
           renderCats(); applyFilters();
         }
       }).catch(function(){});
@@ -416,7 +327,7 @@ function init(){
   });
 }
 
-document.getElementById('searchInput').addEventListener('keydown', function(e){ if(e.key === 'Enter') applySearch(); });
+document.getElementById('searchInput').addEventListener('keydown',function(e){ if(e.key==='Enter') applySearch(); });
 init();
 
 </script>

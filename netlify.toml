@@ -1,7 +1,3 @@
-[build]
-  functions = "netlify/functions"
-
-[[headers]]
-  for = "/.netlify/functions/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
+[[edge_functions]]
+  path = "/api/productos"
+  function = "productos"
