@@ -174,7 +174,7 @@ function parseCSV(text){
     var pesos  = (col.pesos !== undefined) ? parseFloat(String(r[col.pesos]||'0').replace(/[^0-9.,]/g,'').replace(',','.')) || 0 : 0;
     var iva    = (col.iva   !== undefined) ? parseFloat(String(r[col.iva]  ||'0').replace(/[^0-9.,]/g,'').replace(',','.')) || 0 : 0;
     var precio = 0;
-    var margen = (iva >= 20) ? 1.45 : 1.15;
+    var margen = (iva >= 20) ? 1.25 : 1.15;
     if(pesos > 0){
       precio = Math.round(pesos * margen);
     } else { continue; }
